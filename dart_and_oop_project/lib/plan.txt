@@ -1,0 +1,47 @@
+Q -> constructor vs setters and getters?
+Q -> can I separate the functions of the class in another file?
+Q -> whyyyyyyyy polymorphism
+
+library management system
+
+class Book
+(title author isbn available)
++
+ due date optional
+
+
+
+class SubTypesBooks inherites Books
+(restrictions on borrowing)
+
+
+
+ class library
+ list<Book> book
+
+ add book
+ remove book 
+ search books by title , author ,isbn
+ generate reports
+ exit
+ 
+borrow process:
+[
+search && login
+
+found? -> borrow[make object from borrowProcess + add book , user , other attributes] -> make the book.isAvailable = false 
+-> ask user about the duration -> inform user about returning date
+
+not found? -> search again
+]
+
+user without login [search , report about books in library]
+user with login [borrow , return , pay fees]
+
+
+borrow
+make sure about login 
+make sure about book available
+make object borrowProcess 
+add object to list processesOfBorrow
+book.numOfBorrow++
