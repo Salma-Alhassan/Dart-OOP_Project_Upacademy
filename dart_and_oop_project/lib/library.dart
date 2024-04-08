@@ -11,8 +11,13 @@ class Library extends Report {
       {required String title,
       required String author,
       required int ISBN,
-      required int amount}) {
-    Book book = Book(title: title, author: author, ISBN: ISBN);
+      required int amount,
+      required bool hasRestrictions}) {
+    Book book = Book(
+        title: title,
+        author: author,
+        ISBN: ISBN,
+        hasRestrictions: hasRestrictions);
     if (book.title.isNotEmpty &&
         book.author.isNotEmpty &&
         book.ISBN != -1 &&
@@ -62,8 +67,7 @@ class Library extends Report {
     if (user == null) {
       print("You are not able to borrow a book");
       return;
-    }
-    else if(user.numOfBooksBorrowed==5){
+    } else if (user.numOfBooksBorrowed == 5) {
       print("You are not able to borrow a book as you already borrowed 5");
       return;
     }
@@ -78,7 +82,10 @@ class Library extends Report {
       print("Sorry, This book is not available now");
       return;
     }
-
+    if (book.hasRestrictions == true) {
+      print("Sorry, This book is just for reading in the library");
+      return;
+    }
     BorrowProcess newProcess =
         BorrowProcess(user: user, book: book, duration: duration);
     processesOfBorrowing.add(newProcess);
