@@ -7,6 +7,7 @@ import 'package:dart_and_oop_project/user.dart';
 class Library extends Report {
   List<User> users = [];
 
+//! add book
   void addBook(
       {required String title,
       required String author,
@@ -31,6 +32,7 @@ class Library extends Report {
       print("the book has not been added to library");
     }
   }
+//! remove book
 
   void removeBook({required int ISBN}) {
     for (Book book in books) {
@@ -45,17 +47,14 @@ class Library extends Report {
 // books.removeWhere((book) => book.ISBN == ISBN);
   }
 
+//! search book
+
   Book? search({required Search? objsearch}) {
-    if (objsearch is SearchWithTitle) {
-      return objsearch.searchAbook(books);
-    } else if (objsearch is SearchWithAuthor) {
-      return objsearch.searchAbook(books);
-    } else if (objsearch is SearchWithIsbn) {
-      return objsearch.searchAbook(books);
-    }
-    return null;
+    // if (objsearch is SearchWithTitle)
+    return objsearch!.searchAbook(books);
   }
 
+//! borrow book
   void borrowAbook(
       {required String nationalId,
       required String password,
@@ -86,6 +85,7 @@ class Library extends Report {
       print("Sorry, This book is just for reading in the library");
       return;
     }
+// //todo add new borrow process
     BorrowProcess newProcess =
         BorrowProcess(user: user, book: book, duration: duration);
     processesOfBorrowing.add(newProcess);
@@ -95,6 +95,7 @@ class Library extends Report {
     print(
         "process done you must return the book by ${newProcess.returningDate} or you will pay fees");
   }
+//! return book
 
   void returnBook({
     required String nationalId,
@@ -109,6 +110,7 @@ class Library extends Report {
       print("You are not able to borrow a book");
       return;
     }
+// //TODO make sure that user has borrowed this book before
     if (processesOfBorrowing.isNotEmpty) {
       for (BorrowProcess oldProcess in processesOfBorrowing) {
         if (oldProcess.bookBorrowed.ISBN == ISBN &&

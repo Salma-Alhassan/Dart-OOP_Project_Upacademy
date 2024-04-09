@@ -5,6 +5,7 @@ class Report {
   List<Book> books = [];
   List<BorrowProcess> processesOfBorrowing = [];
 
+//! report All Books
   void reportAllBooks(List<Book> books) {
     if (books.isNotEmpty) {
       print("The books in our library:");
@@ -16,7 +17,7 @@ class Report {
       print("No Books in library");
     }
   }
-
+//! report Not Borrowed Books
   void reportNotBorrowedBooks(List<Book> books) {
     if (processesOfBorrowing.isNotEmpty) {
       print("The books borrowed:");
@@ -30,7 +31,7 @@ class Report {
       print("No Books have been borrowed yet!");
     }
   }
-
+//! report Most Popular Books
   void reportMostPopularBooks(List<Book> books) {
     if (books.isNotEmpty) {
       books.sort((a, b) => b.numOfBorrow.compareTo(a.numOfBorrow));
@@ -46,7 +47,7 @@ class Report {
       print("No Books");
     }
   }
-
+//! Report OverDue Books
   void ReportOverDueBooks(){
     if (processesOfBorrowing.isNotEmpty) {
       print("The books not returned yet:");

@@ -5,6 +5,7 @@ class Search {
     return null;
   }
 }
+
 //!Search With Title
 class SearchWithTitle extends Search {
   String? title;
@@ -22,6 +23,7 @@ class SearchWithTitle extends Search {
     return null;
   }
 }
+
 //!Search With Author
 //TODO one auther -> multiple books
 class SearchWithAuthor extends Search {
@@ -40,6 +42,7 @@ class SearchWithAuthor extends Search {
     return null;
   }
 }
+
 //!Search With Isbn
 class SearchWithIsbn extends Search {
   int? ISBN;

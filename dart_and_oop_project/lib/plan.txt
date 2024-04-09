@@ -1,6 +1,6 @@
 Q -> constructor vs setters and getters?
 Q -> can I separate the functions of the class in another file?
-Q -> whyyyyyyyy polymorphism
+Q -> whyyyyyyyy polymorphism   done
 
 library management system
 

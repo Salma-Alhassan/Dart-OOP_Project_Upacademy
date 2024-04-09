@@ -1,4 +1,3 @@
-//*class1---------------------------------------------------
 class Book {
   //TODO attributes
   String? _title;
@@ -7,7 +6,6 @@ class Book {
   int? _amount;
   int? _numOfBorrow = 0;
   bool? _hasRestrictions;
-
 
 //TODO set functions
   set title(String title) {
@@ -41,12 +39,17 @@ class Book {
   set numOfBorrow(int numOfBorrow) {
     _numOfBorrow = numOfBorrow;
   }
-  set hasRestrictions(bool hasRestrictions){
-    _hasRestrictions=hasRestrictions;
+
+  set hasRestrictions(bool hasRestrictions) {
+    _hasRestrictions = hasRestrictions;
   }
 
 //TODO constructor
-  Book({required String title, required String author, required int ISBN,required bool hasRestrictions}) {
+  Book(
+      {required String title,
+      required String author,
+      required int ISBN,
+      required bool hasRestrictions}) {
     if (title.isNotEmpty) {
       _title = title;
     } else {
@@ -62,6 +65,7 @@ class Book {
     } else {
       print("enter valid data,please");
     }
+    _hasRestrictions=hasRestrictions;
   }
 
 //TODO get functions
@@ -71,5 +75,4 @@ class Book {
   int get amount => _amount!;
   int get numOfBorrow => _numOfBorrow!;
   bool get hasRestrictions => _hasRestrictions!;
-
 }

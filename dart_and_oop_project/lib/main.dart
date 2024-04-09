@@ -21,13 +21,13 @@ void main() {
 //? REMOVE USER
   // user.removeUser(users: library.users, nationalId: "30312011404363");
 //? ADD BOOK TO LIBRARY
-  // library.addBook(title: "book1", author: "author1", ISBN: 1, amount: 1);
-  // library.addBook(title: "book2", author: "author2", ISBN: 2,amount: 5);
-  // library.addBook(title: "book3", author: "author3", ISBN: 3,amount: 5);
-  // library.addBook(title: "book4", author: "author4", ISBN: 4,amount: 5);
-  // library.addBook(title: "book5", author: "author5", ISBN: 5,amount: 5);
-//? SEARCH ABOUT BOOK BY ISBN
-  // library.search(objsearch: SearchWithIsbn(4));
+//   library.addBook(title: "book1", author: "author1", ISBN: 1, amount: 1,hasRestrictions: false);
+//   library.addBook(title: "book2", author: "author2", ISBN: 2,amount: 5,hasRestrictions: false);
+  // library.addBook(title: "book3", author: "author3", ISBN: 3,amount: 5,hasRestrictions: true);
+  // library.addBook(title: "book4", author: "author4", ISBN: 4,amount: 5,hasRestrictions: false);
+  // library.addBook(title: "book5", author: "author5", ISBN: 5,amount: 5,hasRestrictions: false);
+// //? SEARCH ABOUT BOOK BY ISBN
+  // library.search(objsearch: SearchWithIsbn(5));
 //? SEARCH ABOUT BOOK BY TITLE
   // library.search(objsearch: SearchWithTitle("book"));
 //? SEARCH ABOUT BOOK BY AUTHOR
@@ -38,7 +38,7 @@ void main() {
 
 //? BORROW A BOOK
 
-  // library.borrowAbook(nationalId: "30312011404363",password: "1234",ISBN: 1,duration:Duration(days: 14));
+  // library.borrowAbook(nationalId: "30312011404363",password: "1234",ISBN: 3,duration:Duration(days: 14));
   // library.borrowAbook(nationalId: "30312011404363",password: "1234",ISBN: 1,duration:Duration(days: 14));
   // library.borrowAbook(nationalId: "30312011404363",password: "1234",ISBN: 4,duration:Duration(days: 14));
   // library.borrowAbook(nationalId: "30312011404363",password: "1234",ISBN: 4,duration:Duration(days: 14));
@@ -48,7 +48,7 @@ void main() {
   // library.borrowAbook(nationalId: "30312011404363",password: "1234",ISBN: 5,duration:Duration(days: 14));
 
 //? RETURN THE BOOK
-  // library.returnBook(nationalId: "30312011404363", password: "1234", ISBN: 3);
+  // library.returnBook(nationalId: "30312011404363", password: "1234", ISBN: 5);
 
 //? REPORT ABOUT ALL BOOKS IN LIBRARY
   // library.reportAllBooks(library.books);
@@ -56,7 +56,7 @@ void main() {
 //? REPORT ABOUT BOOKS BORROWED AND NOT RETURNED BACK YET
   // library.ReportOverDueBooks();
 
-//? REPORT OF MOST POPULAR BOOKS  -> THE MOST 3
+//? REPORT OF MOST POPULAR BOOKS  -> THE MOST 3 
   // library.reportMostPopularBooks(library.books);
 
 //? REPORT BOOKS HAVE NOT BEEN BORROWED BEFORE
