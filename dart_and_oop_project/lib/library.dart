@@ -32,6 +32,20 @@ class Library extends Report {
       print("the book has not been added to library");
     }
   }
+
+//! increase the amount of a book already exists in the library
+  void increaseAmount({required int ISBN,required int amount}) {
+    for (Book book in books) {
+      if (book.ISBN == ISBN) {
+        book.amount += amount;
+        print("Book ${book.title} is increased by $amount");
+        return;
+      }
+    }
+    print("This ISBN does not exist , add the book instead");
+    return;
+  }
+
 //! remove book
 
   void removeBook({required int ISBN}) {

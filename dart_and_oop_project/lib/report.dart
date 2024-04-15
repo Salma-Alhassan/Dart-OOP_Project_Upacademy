@@ -17,21 +17,24 @@ class Report {
       print("No Books in library");
     }
   }
+
 //! report Not Borrowed Books
   void reportNotBorrowedBooks(List<Book> books) {
-    if (processesOfBorrowing.isNotEmpty) {
-      print("The books borrowed:");
-      for (Book element in books) {
-        if (element.numOfBorrow == 0) {
-          print(
-              "the book ${element.title} has ISBN ${element.ISBN} wrote by the author ${element.author}");
-        }
+    bool flag = false;
+    print("The books not borrowed:");
+    for (Book element in books) {
+      if (element.numOfBorrow == 0) {
+        flag = true;
+        print(
+            "the book ${element.title} with ISBN ${element.ISBN} wrote by the author ${element.author}");
       }
-    } else {
-      print("No Books have been borrowed yet!");
+    }
+    if (flag == false) {
+      print("all books have been borrowed before");
     }
   }
-//! report Most Popular Books
+
+//! report Most Popular Books // the most 3
   void reportMostPopularBooks(List<Book> books) {
     if (books.isNotEmpty) {
       books.sort((a, b) => b.numOfBorrow.compareTo(a.numOfBorrow));
@@ -47,14 +50,15 @@ class Report {
       print("No Books");
     }
   }
+
 //! Report OverDue Books
-  void ReportOverDueBooks(){
+  void reportOverDueBooks() {
     if (processesOfBorrowing.isNotEmpty) {
       print("The books not returned yet:");
       for (BorrowProcess element in processesOfBorrowing) {
-        if(element.bookHasBeenReturned==false) {
+        if (element.bookHasBeenReturned == false) {
           print(
-            "the book ${element.bookBorrowed.title} has ISBN ${element.bookBorrowed.ISBN} borrowed by ${element.userBorrowing.firstName} ${element.userBorrowing.lastName} whose national id is ${element.userBorrowing.nationalId}");
+              "the book ${element.bookBorrowed.title} has ISBN ${element.bookBorrowed.ISBN} borrowed by ${element.userBorrowing.firstName} ${element.userBorrowing.lastName} whose national id is ${element.userBorrowing.nationalId}");
         }
       }
     } else {

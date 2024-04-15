@@ -36,6 +36,9 @@ void main() {
 //? REMOVE BOOK BY IT'S ISBN
   // library.removeBook(ISBN: 4);
 
+//? INCREASE THE AMOUNT OF BOOK BY IT'S ISBN
+  // library.increaseAmount(ISBN: 4,amount: 2);
+
 //? BORROW A BOOK
 
   // library.borrowAbook(nationalId: "30312011404363",password: "1234",ISBN: 3,duration:Duration(days: 14));
@@ -54,9 +57,9 @@ void main() {
   // library.reportAllBooks(library.books);
 
 //? REPORT ABOUT BOOKS BORROWED AND NOT RETURNED BACK YET
-  // library.ReportOverDueBooks();
+  // library.reportOverDueBooks();
 
-//? REPORT OF MOST POPULAR BOOKS  -> THE MOST 3 
+//? REPORT OF MOST POPULAR BOOKS  -> THE MOST 3
   // library.reportMostPopularBooks(library.books);
 
 //? REPORT BOOKS HAVE NOT BEEN BORROWED BEFORE
